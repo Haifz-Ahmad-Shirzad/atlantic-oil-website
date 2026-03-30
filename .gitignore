@@ -1,0 +1,9 @@
+# media files
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# system
+.DS_Store
+Thumbs.db
