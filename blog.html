@@ -4,28 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-
     <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9fafb;
+      }
+
+      .hero-section {
+        background: url("/images/blog-hero.jpg") center/cover;
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        color: #facc15;
+      }
+
+      .page-section {
+        padding: 40px 20px;
+      }
+
+      .page-section h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 2rem;
+        color: #f97316;
+      }
+
       .blog-grid {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-        padding: 20px;
         justify-content: center;
       }
 
       .blog-card {
-        width: 300px;
         background: #1f2937;
         color: white;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 300px;
       }
 
       .blog-card img {
@@ -35,61 +68,97 @@
       }
 
       .blog-card h3 {
-        color: #f97316;
-        padding: 10px;
+        padding: 15px;
+        font-size: 1.5rem;
+        color: #facc15;
       }
 
       .blog-card p {
-        padding: 0 10px;
+        padding: 0 15px;
+        font-size: 1rem;
+        color: #d1d5db;
       }
 
       .read-more {
         display: inline-block;
-        margin: 10px;
+        margin: 15px;
         color: #f97316;
         text-decoration: none;
+        font-weight: bold;
+      }
+
+      .read-more i {
+        margin-left: 5px;
       }
     </style>
   </head>
   <body dir="rtl">
-    <!-- Load header from components/header.html -->
+    <!-- Header Section -->
     <div id="header"></div>
 
-    <!-- <section class="page-section">
+    <!-- Hero Section -->
+    <section class="hero-section">
       <h1>بلاګ</h1>
+      <p>زموږ وروستي مقالي او معلومات</p>
+    </section>
 
-      <div class="blog-card">
-        <h3>د ماشینونو لپاره غوره روغن انتخاب</h3>
-        <p>په دې مقاله کې موږ د مناسب روغن انتخاب تشریح کوو...</p>
-      </div>
-
-      <div class="blog-card">
-        <h3>صنعتي ماشینونه څنګه ساتل کېږي؟</h3>
-        <p>د اوږد عمر لپاره مهم تخنیکي ټکي...</p>
-      </div>
-    </section> -->
-
+    <!-- Blog Section -->
     <section class="page-section">
-      <h1>بلاګ</h1>
+      <h2>وروستي مقالي</h2>
 
       <div class="blog-grid">
         <div class="blog-card">
-          <img src="/images/blog1.webp" alt="blog image" />
-          <h3>د ماشینونو لپاره غوره روغن انتخاب</h3>
-          <p>په دې مقاله کې موږ د مناسب روغن انتخاب تشریح کوو...</p>
-          <a href="#" class="read-more">نور ولولئ</a>
+          <img
+            src="/images/blog1.webp"
+            alt="د ماشینونو لپاره غوره روغن انتخاب"
+          />
+          <div>
+            <h3>د ماشینونو لپاره غوره روغن انتخاب</h3>
+            <p>په دې مقاله کې موږ د مناسب روغن انتخاب تشریح کوو...</p>
+            <a href="#" class="read-more"
+              >نور ولولئ <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
         </div>
 
         <div class="blog-card">
-          <img src="/images/blog2.webp" alt="blog image" />
-          <h3>صنعتي ماشینونه څنګه ساتل کېږي؟</h3>
-          <p>د اوږد عمر لپاره مهم تخنیکي ټکي...</p>
-          <a href="#" class="read-more">نور ولولئ</a>
+          <img src="/images/blog2.webp" alt="صنعتي ماشینونه څنګه ساتل کېږي؟" />
+          <div>
+            <h3>صنعتي ماشینونه څنګه ساتل کېږي؟</h3>
+            <p>د اوږد عمر لپاره مهم تخنیکي ټکي...</p>
+            <a href="#" class="read-more"
+              >نور ولولئ <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="/images/blog3.webp" alt="د انجن ساتنې غوره لارې" />
+          <div>
+            <h3>د انجن ساتنې غوره لارې</h3>
+            <p>د انجن د اوږد عمر لپاره غوره لارې چارې...</p>
+            <a href="#" class="read-more"
+              >نور ولولئ <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <img src="/images/blog4.webp" alt="د تیلو د بدلولو وخت" />
+          <div>
+            <h3>د تیلو د بدلولو وخت</h3>
+            <p>کله او څنګه د تیلو بدلول اړین دي...</p>
+            <a href="#" class="read-more"
+              >نور ولولئ <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
         </div>
       </div>
     </section>
-    <!-- Load Footer from components/Footer.html -->
+
+    <!-- Footer Section -->
     <div id="footer"></div>
-    <script src="script.js"></script>
+
+    <script src="./script.js"></script>
   </body>
 </html>

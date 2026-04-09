@@ -148,8 +148,18 @@
   display: none;
   cursor: pointer;
 }
+
+/* HEADER DESKTOP FIX */
+.mobile-auth {
+  /* display: flex;
+  flex-direction: row; */
+  align-items: center;
+  gap: 10px;
+}
 /* =========================
    HEADER (Mobile)
+
+   
 ========================= */
 @media (max-width: 768px) {
   .header {
@@ -178,7 +188,8 @@
   }
 
   #menu-toggle:checked ~ .nav-links {
-    max-height: 420px;
+    /* max-height: 420px; */
+    max-height: 600px; /* safer */
   }
 
   /* .header-btn {
