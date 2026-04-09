@@ -11,26 +11,28 @@
 
   --primary-color: #0f172a;
   --secondary-color: #f97316;
-  /* --secondary-color: blue; */
+  --terary-color: blue;
 
   /* supporting colors */
 
   --text-color: #ffffff;
   --light-gray: #f1f1f1;
   --dark-gray: #1f2937;
-
-  --bg: #111827;
+  --bg-color: #111827;
   --text: #e5e7eb;
 
   /* optional */
-
   --border-radius: 10px;
   --transition: 0.3s ease;
-
   /* shadow */
   --shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+/* ////////////////////////////// */
+/* =========================
+   HEADER (Desktop)
+========================= */
 
 .header {
   padding: 10px;
@@ -49,16 +51,16 @@
 #logo img {
   width: 12em;
 }
-header ul {
+.header ul {
   display: flex;
 }
 
-header ul li {
+.header ul li {
   list-style-type: none;
   margin: 5px;
   cursor: pointer;
 }
-header ul li a {
+.header ul li a {
   list-style-type: none;
   margin: 5px;
   cursor: pointer;
@@ -70,7 +72,7 @@ header ul li a {
   border-radius: 6px;
   padding: 2px 5px;
 }
-header ul li a:hover {
+.header ul li a:hover {
   list-style-type: none;
   margin: 5px;
   cursor: pointer;
@@ -125,123 +127,57 @@ header ul li a:hover {
   color: white;
 }
 
-@media (max-width: 768px) {
-  .header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* show hamburger */
-  .menu-toggle {
-    display: block;
-  }
-
-  /* hide nav by default */
-  .nav-links {
-    background: var(--primary-color);
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    width: 100%;
-  }
-
-  /* Ul */
-  .nav-links {
-    flex-direction: column;
-  }
-
-  .nav-links li {
-    margin: 15px 0;
-  }
-
-  /* hide buttons on mobile (optional clean UI) */
-  .header-btn {
-    display: none;
-  }
-}
-
-.nav-links {
-  transition: all 0.3s ease;
-}
-
+/* This is for hiding hamburger menu in Desktop */
 .menu-icon {
   display: none;
   cursor: pointer;
 }
-
-/* ////////////////////////// */
-/* hamberger menu */
-
-/* hide menu by default on mobile */
+/* =========================
+   HEADER (Mobile)
+========================= */
 @media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
   .nav-links {
     position: absolute;
     top: 70px;
-    left: 0;
+    right: 0;
     width: 100%;
     background: var(--primary-color);
+
+    display: flex;
     flex-direction: column;
+    text-align: center;
 
     max-height: 0;
     overflow: hidden;
-    transition: 0.3s ease;
+    transition: max-height 0.3s ease;
   }
 
-  #menu-toggle {
-    /* hide checkbox */
+  #menu-toggle:checked ~ .nav-links {
+    max-height: 400px;
+  }
+
+  .header-btn {
     display: none;
   }
-  /* ========================= */
-  /* MOBILE MENU (768px ↓) */
-  /* ========================= */
-
-  @media (max-width: 768px) {
-    .header {
-      justify-content: space-between;
-    }
-
-    /* show hamburger */
-    .menu-icon {
-      display: block;
-    }
-
-    /* hide nav by default */
-    .nav-links {
-      position: absolute;
-      top: 70px;
-      right: 0;
-      width: 100%;
-      background: var(--primary-color);
-
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .nav-links li {
-      margin: 15px 0;
-    }
-
-    /* checkbox hack (OPEN MENU) */
-    #menu-toggle:checked ~ .nav-links {
-      max-height: 400px;
-    }
-
-    /* hide buttons */
-    .header-btn {
-      display: none;
-    }
-  }
 }
+/* //////////////////////// */
+
+/* ////////////////////////// */
+/* hamberger menu */
+/* hide menu by default on mobile */
+
+/* ========================= */
+/* MOBILE MENU (768px ↓) */
+/* ========================= */
 
 .menu-icon span {
   display: block;
@@ -269,6 +205,8 @@ header ul li a:hover {
 }
 
 /* Hero section */
+
+/*  //////////   HERO Desktop  ///////*/
 
 .hero {
   width: 100%;
@@ -349,6 +287,30 @@ header ul li a:hover {
   transform: scale(1.05);
   transform: translateY(-3px);
 }
+
+/* ///// */
+
+/* Hero responsiveness */
+/* =========================
+   HERO (Mobile)
+========================= */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-image {
+    width: 80%;
+  }
+}
+/* ///// */
+
+/* //////////////////// */
 
 /* slider cards */
 .slider-section {
@@ -645,6 +607,18 @@ footer ul li a {
   padding-top: 10px;
 }
 
+/* footer responsiveness */
+/* =========================
+   FOOTER (Mobile)
+========================= */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* ///////////////////////////////// */
+
 .video-container {
   position: relative;
   width: 100%;
@@ -664,22 +638,7 @@ footer ul li a {
 
 /* 
 
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  header ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    flex-direction: column;
-  }
-}
-*/
+HEADER RESPONSIVENESS */
 
 @media (max-width: 768px) {
   .header {
@@ -706,36 +665,6 @@ footer ul li a {
   .btn {
     width: 100%;
     justify-content: center;
-  }
-}
-/* Hero responsiveness */
-
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-text h1 {
-    font-size: 28px;
-  }
-  .hero-text p {
-    font-size: 16px;
-  }
-  .hero-text {
-    width: 80%;
-  }
-  .hero-image {
-    width: 80%;
-  }
-}
-
-/* footer responsiveness */
-
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
   }
 }
 
