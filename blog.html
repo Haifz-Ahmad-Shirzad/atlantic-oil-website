@@ -4,40 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <style>
+      .blog-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+      }
+
+      .blog-card {
+        width: 300px;
+        background: #1f2937;
+        color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .blog-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .blog-card h3 {
+        color: #f97316;
+        padding: 10px;
+      }
+
+      .blog-card p {
+        padding: 0 10px;
+      }
+
+      .read-more {
+        display: inline-block;
+        margin: 10px;
+        color: #f97316;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body dir="rtl">
-    <header class="header">
-      <!-- logo / app name -->
-      <div id="logo">
-        <img src="./images/logo.webp" alt="logo" />
-      </div>
-      <!-- Navigation links -->
-      <nav class="nav-links" id="nav-links">
-        <ul>
-          <li><a href="index.html">کور پاڼه</a></li>
-          <li><a href="about.html">زموږ په اړه</a></li>
-          <li><a href="services.html">خدمات</a></li>
-          <li><a href="blog.html">بلاګ</a></li>
-          <li><a href="contact.html">تماس</a></li>
-        </ul>
-      </nav>
+    <!-- Load header from components/header.html -->
+    <div id="header"></div>
 
-      <div class="header-btn">
-        <a href="#" id="login">Login</a>
-        <a href="#" id="signup">SignUp</a>
-      </div>
-      <!-- Hamburger menu (mobile) -->
-      <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-    </header>
-
-    <section class="page-section">
+    <!-- <section class="page-section">
       <h1>بلاګ</h1>
 
       <div class="blog-card">
@@ -49,47 +67,29 @@
         <h3>صنعتي ماشینونه څنګه ساتل کېږي؟</h3>
         <p>د اوږد عمر لپاره مهم تخنیکي ټکي...</p>
       </div>
+    </section> -->
+
+    <section class="page-section">
+      <h1>بلاګ</h1>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <img src="/images/blog1.webp" alt="blog image" />
+          <h3>د ماشینونو لپاره غوره روغن انتخاب</h3>
+          <p>په دې مقاله کې موږ د مناسب روغن انتخاب تشریح کوو...</p>
+          <a href="#" class="read-more">نور ولولئ</a>
+        </div>
+
+        <div class="blog-card">
+          <img src="/images/blog2.webp" alt="blog image" />
+          <h3>صنعتي ماشینونه څنګه ساتل کېږي؟</h3>
+          <p>د اوږد عمر لپاره مهم تخنیکي ټکي...</p>
+          <a href="#" class="read-more">نور ولولئ</a>
+        </div>
+      </div>
     </section>
-
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- company -->
-        <div class="footer-section">
-          <h3>Atlanti Oil & Lubricants</h3>
-          <p>موږ د لوړ کیفیت مبلین او روغنیاتو عرضه کوونکي يو.</p>
-        </div>
-
-        <!-- links -->
-        <div class="footer-section">
-          <h3>لینکونه</h3>
-          <ul>
-            <li><a href="#">کور</a></li>
-            <li><a href="#">زموږ په اړه</a></li>
-            <li><a href="#">محصولات</a></li>
-            <li><a href="#">اړیکه</a></li>
-          </ul>
-        </div>
-        <!-- Contact -->
-        <div class="footer-section">
-          <h3>اړیکه</h3>
-          <p>mobile: +93706429910</p>
-          <p>Email: hafizahmadshirzad@gmail.com</p>
-        </div>
-        <!-- social -->
-        <div class="footer-section">
-          <h3>موږ تعقیب کړئ</h3>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-          </div>
-        </div>
-      </div>
-      <!-- Bottom -->
-
-      <div class="footer-bottom">
-        <p>© 2026 Atlantic Oil | ټول حقوق خوندي دي.</p>
-      </div>
-    </footer>
+    <!-- Load Footer from components/Footer.html -->
+    <div id="footer"></div>
+    <script src="script.js"></script>
   </body>
 </html>

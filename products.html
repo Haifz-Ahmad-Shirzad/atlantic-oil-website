@@ -1,57 +1,312 @@
 <!doctype html>
-<html lang="en">
+<html lang="ps">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Products | Atlantic Kandahar Agency</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <style>
+      /* RESET */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* font-family: Arial, sans-serif; */
+      }
+
+      /* BODY */
+      body {
+        background: #0b1220;
+        color: white;
+      }
+
+      /* HEADER */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background: #111827;
+        align-items: center;
+      }
+
+      .logo {
+        font-weight: bold;
+        color: #facc15;
+      }
+
+      .nav a {
+        color: white;
+        margin-left: 15px;
+        text-decoration: none;
+      }
+
+      .nav a.active {
+        color: #facc15;
+      }
+
+      /* PAGE TITLE */
+      .page-title {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .page-title h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .page-title p {
+        color: #aaa;
+      }
+
+      /* CATEGORY */
+      .category {
+        padding: 30px;
+      }
+
+      .category h2 {
+        margin-bottom: 20px;
+        border-left: 4px solid #facc15;
+        padding-left: 10px;
+      }
+
+      /* GRID */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      /* CARD */
+      .card {
+        background: #111827;
+        padding: 15px;
+        border-radius: 12px;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: contain;
+      }
+
+      .card h3 {
+        margin: 10px 0;
+        color: #facc15;
+      }
+
+      .price {
+        display: inline-block;
+        margin-top: 10px;
+        color: #22c55e;
+        font-weight: bold;
+      }
+
+      /* FOOTER */
+      .footer {
+        text-align: center;
+        padding: 20px;
+        background: #111827;
+        margin-top: 40px;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 992px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header {
+          flex-direction: column;
+        }
+
+        .nav {
+          margin-top: 10px;
+        }
+      }
+    </style>
   </head>
+
   <body dir="rtl">
+    <!-- 1.1 Header section -->
     <header class="header">
-      <!-- logo / app name -->
       <div id="logo">
-        <img src="./images/logo.webp" alt="logo" />
+        <img src="/images/logo.webp" alt="logo" />
       </div>
-      <!-- Navigation links -->
-      <nav class="nav-links" id="nav-links">
-        <ul>
-          <li><a href="index.html">کور پاڼه</a></li>
-          <li><a href="about.html">زموږ په اړه</a></li>
-          <li><a href="services.html">خدمات</a></li>
-          <li><a href="blog.html">بلاګ</a></li>
-          <li><a href="contact.html">تماس</a></li>
-        </ul>
-      </nav>
+
+      <!-- checkbox -->
+      <input type="checkbox" id="menu-toggle" />
+
+      <!-- hamburger -->
+      <label for="menu-toggle" class="menu-icon">
+        <span class="hide-span"></span>
+        <span class="hide-span"></span>
+        <span class="hide-span"></span>
+      </label>
+
+      <!-- menu -->
+      <ul class="nav-links">
+        <li><a href="index.html">کور پاڼه</a></li>
+        <li><a href="/about.html">زموږ په اړه</a></li>
+        <li><a href="/services.html">خدمات</a></li>
+        <li><a href="/products.html">محصولات</a></li>
+        <li><a href="/blog.html">بلاګ</a></li>
+        <li><a href="/contact.html">تماس</a></li>
+      </ul>
 
       <div class="header-btn">
-        <a href="#" id="login">Login</a>
-        <a href="#" id="signup">SignUp</a>
-      </div>
-      <!-- Hamburger menu (mobile) -->
-      <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
+        <a href="login.html" id="login">Login</a>
+        <a href="signup.html" id="signup">SignUp</a>
       </div>
     </header>
-    <section class="page-section">
-      <h1>محصولات</h1>
+
+    <!-- PAGE TITLE -->
+    <section class="page-title">
+      <h1>Our Products | زموږ محصولات</h1>
+      <p>Premium Automotive & Industrial Lubricants</p>
+    </section>
+
+    <!-- CATEGORY: MAX POWER -->
+    <section class="category">
+      <h2>Max Power Series | میکس پاور سیریز</h2>
 
       <div class="grid">
-        <div class="card">Engine Oil</div>
-        <div class="card">Hydraulic Oil</div>
-        <div class="card">Industrial Grease</div>
-        <div class="card">Gear Oil</div>
+        <div class="card">
+          <img src="./images/white4.webp" alt="Max Power 7L" />
+          <h3>Max Power 7L</h3>
+          <p>Engine Oil | انجن تیل</p>
+          <span class="price">1050 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="/images/white5.png" alt="Max Power 5L" />
+          <h3>Max Power 5L</h3>
+          <p>Engine Oil | انجن تیل</p>
+          <span class="price">750 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/white5.png" alt="Max Power 3L" />
+          <h3>Max Power 3L</h3>
+          <p>Engine Oil | انجن تیل</p>
+          <span class="price">450 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/white5.png" alt="Max Power 1L" />
+          <h3>Max Power 1L</h3>
+          <p>Engine Oil | انجن تیل</p>
+          <span class="price">150 افغانۍ</span>
+        </div>
       </div>
     </section>
 
+    <!-- CATEGORY: X SERIES -->
+    <section class="category">
+      <h2>X Series | ایکس سیریز</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="images/x5.png" />
+          <h3>X 7L</h3>
+          <span class="price">1050 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/x5.png" />
+          <h3>X 5L</h3>
+          <span class="price">750 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/x5.png" />
+          <h3>X 3L</h3>
+          <span class="price">450 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/x5.png" />
+          <h3>X 1L</h3>
+          <span class="price">150 افغانۍ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: BRAKE OIL -->
+    <section class="category">
+      <h2>Brake Oil | بریک آئل</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="images/brake20ML.webp" />
+          <h3>Brake Oil 250ML</h3>
+          <span class="price">100 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/brakeoil250ml.webp" />
+          <h3>Brake Oil 500ML (1/12)</h3>
+          <span class="price">100 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/brakeoil250ml.webp" />
+          <h3>Brake Oil 500ML (1/24)</h3>
+          <span class="price">100 افغانۍ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY: GREASE -->
+    <section class="category">
+      <h2>Grease | گریس</h2>
+
+      <div class="grid">
+        <div class="card">
+          <img src="images/grease.webp" />
+          <h3>Grease 500mg</h3>
+          <span class="price">100 افغانۍ</span>
+        </div>
+
+        <div class="card">
+          <img src="images/grease.webp" />
+          <h3>Grease 15kg</h3>
+          <span class="price">100 افغانۍ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1.7 Footer section -->
     <footer class="footer">
       <div class="footer-container">
         <!-- company -->
         <div class="footer-section">
           <h3>Atlanti Oil & Lubricants</h3>
+          <!-- <img
+            src="./images/logo.webp"
+            alt="logo"
+            width="200"
+            height="60"
+            ;
+            style="margin: 12px 0"
+          /> -->
           <p>موږ د لوړ کیفیت مبلین او روغنیاتو عرضه کوونکي يو.</p>
         </div>
 
@@ -59,17 +314,17 @@
         <div class="footer-section">
           <h3>لینکونه</h3>
           <ul>
-            <li><a href="#">کور</a></li>
-            <li><a href="#">زموږ په اړه</a></li>
-            <li><a href="#">محصولات</a></li>
-            <li><a href="#">اړیکه</a></li>
+            <li><a href="/index.html">کور</a></li>
+            <li><a href="/about.html">زموږ په اړه</a></li>
+            <li><a href="/products.html">محصولات</a></li>
+            <li><a href="/contact.html">اړیکه</a></li>
           </ul>
         </div>
         <!-- Contact -->
         <div class="footer-section">
           <h3>اړیکه</h3>
-          <p>mobile: +93706429910</p>
-          <p>Email: hafizahmadshirzad@gmail.com</p>
+          <p class="contact">موبایل: 93706429910+</p>
+          <p class="contact">ایمیل: hafizahmadshirzad@gmail.com</p>
         </div>
         <!-- social -->
         <div class="footer-section">
@@ -78,6 +333,8 @@
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>

@@ -16,30 +16,36 @@
     />
   </head>
   <body dir="rtl">
+    <!-- <div id="header"></div> -->
     <!-- 1.1 Header section -->
     <header class="header">
-      <!-- logo / app name -->
       <div id="logo">
-        <img src="./images/logo.webp" alt="logo" />
+        <img src="/images/logo.webp" alt="logo" />
       </div>
-      <!-- Navigation links -->
-      <nav class="nav-links" id="nav-links">
-        <ul>
-          <li><a href="index.html">کور پاڼه</a></li>
-          <li><a href="about.html">زموږ په اړه</a></li>
-          <li><a href="services.html">خدمات</a></li>
-          <li><a href="blog.html">بلاګ</a></li>
-          <li><a href="contact.html">تماس</a></li>
-        </ul>
-      </nav>
+
+      <!-- checkbox -->
+      <input type="checkbox" id="menu-toggle" />
+
+      <!-- hamburger -->
+      <label for="menu-toggle" class="menu-icon">
+        <span class="hide-span"></span>
+        <span class="hide-span"></span>
+        <span class="hide-span"></span>
+      </label>
+
+      <!-- menu -->
+      <ul class="nav-links">
+        <li><a href="index.html">کور پاڼه</a></li>
+        <li><a href="/about.html">زموږ په اړه</a></li>
+        <li><a href="/services.html">خدمات</a></li>
+        <li><a href="/products.html">محصولات</a></li>
+        <li><a href="/blog.html">بلاګ</a></li>
+        <li><a href="/contact.html">تماس</a></li>
+      </ul>
 
       <div class="header-btn">
-        <a href="#" id="login">Login</a>
-        <a href="#" id="signup">SignUp</a>
-      </div>
-      <!-- Hamburger menu (mobile) -->
-      <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
+        <a href="login.html" id="login">Login</a>
+        <a href="signup.html" id="signup">SignUp</a>
       </div>
     </header>
 
@@ -52,10 +58,12 @@
           <h1>اتلانتیک د مبلينو او روغنياتو شرکت</h1>
           <!-- Short description -->
           <p>موږ د صنعتي او موټري ماشینونو لپاره باوري حلا لاري وړاندي کوو.</p>
-          <a href="#" class="hero-btn">نور معلومات...</a>
+          <a href="https://atlanticlubes.com/" class="hero-btn"
+            >نور معلومات...</a
+          >
         </div>
         <div class="hero-image">
-          <img src="./images/hero.webp" alt="hero" width="300" height="300" />
+          <img src="images/hero.webp" alt="hero" width="300" height="300" />
         </div>
       </div>
     </section>
@@ -101,13 +109,25 @@
 
     <section class="demo">
       <!-- video -->
-      <!-- <video
-        src="./images/demo.mp4"
-        controls
-        style="width: 100%"
-        height="100%"
-      ></video> -->
       <iframe
+        width="100%"
+        height="600"
+        src="https://www.youtube.com/embed/9xmuqQjRMEg?si=d3HXWwRq1_tO_OsZ"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+      <!-- <iframe
         width="100%"
         height="600"
         src="https://www.youtube.com/embed/SPi1k1ynEB8"
@@ -124,17 +144,17 @@
         "
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-      ></iframe>
+      ></iframe> -->
     </section>
+
     <!-- 1.5 Testimonial section -->
-    <!-- 1.5 Testimonials Section -->
     <section class="testimonials">
       <h2 class="section-title">د مشتريانو نظرونه</h2>
 
       <div class="testimonials-container">
         <div class="testimonial-card">
           <div class="avatar">
-            <img src="./images/hafiz.jpg" alt="" />
+            <img src="/images/hafiz.jpg" alt="" />
           </div>
           <p>
             "د اتلانتیک شرکت محصولات ډېر لوړ کیفیت لري. موږ د خپلو فابریکو لپاره
@@ -154,7 +174,7 @@
         <div class="testimonial-card">
           <div class="avatar">
             <img
-              src="./images/WhatsApp Image 2025-12-26 at 18.10.32_fab82265.jpg"
+              src="/images/WhatsApp Image 2025-12-26 at 18.10.32_fab82265.jpg"
               alt=""
             />
           </div>
@@ -175,7 +195,7 @@
 
         <div class="testimonial-card">
           <div class="avatar">
-            <img src="./images/احمد_1402 .jpg" alt="" />
+            <img src="/images/احمد_1402 .jpg" alt="" />
           </div>
           <p>
             "موږ د څو کلونو راهیسې له دې شرکت سره کار کوو. کیفیت یې ثابت او قوي
@@ -193,7 +213,7 @@
         </div>
         <div class="testimonial-card">
           <div class="avatar">
-            <img src="./images/compressed.jpg" alt="" />
+            <img src="/images/compressed.jpg" alt="" />
           </div>
 
           <p>د اتلانتيک کمپنۍ روغنیات د غوره کیفیت لرونکو روغنیاتو څخه دي.</p>
@@ -236,7 +256,7 @@
           <p>هو، موږ د فابریکو او شرکتونو لپاره ځانګړي خل لاري لرو.</p>
         </div>
         <div class="faq-item">
-          <h3>آیا ستاسو محصولات چاپیریال ته زیتن نه رسوي؟</h3>
+          <h3>آیا ستاسو محصولات چاپیریال ته زیان نه رسوي؟</h3>
           <p>موږ هڅه کوو چي د چاپیریال سره سم او مناسب محصولات تولید کړو.</p>
         </div>
       </div>
@@ -248,14 +268,6 @@
         <!-- company -->
         <div class="footer-section">
           <h3>Atlanti Oil & Lubricants</h3>
-          <!-- <img
-            src="./images/logo.webp"
-            alt="logo"
-            width="200"
-            height="60"
-            ;
-            style="margin: 12px 0"
-          /> -->
           <p>موږ د لوړ کیفیت مبلین او روغنیاتو عرضه کوونکي يو.</p>
         </div>
 
@@ -263,18 +275,22 @@
         <div class="footer-section">
           <h3>لینکونه</h3>
           <ul>
-            <li><a href="#">کور</a></li>
-            <li><a href="#">زموږ په اړه</a></li>
-            <li><a href="#">محصولات</a></li>
-            <li><a href="#">اړیکه</a></li>
+            <li><a href="/index.html">کور</a></li>
+            <li><a href="/about.html">زموږ په اړه</a></li>
+            <li><a href="/products.html">محصولات</a></li>
+            <li><a href="/contact.html">اړیکه</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">د محرمیت پالیسي</a></li>
           </ul>
         </div>
+
         <!-- Contact -->
         <div class="footer-section">
           <h3>اړیکه</h3>
           <p class="contact">موبایل: 93706429910+</p>
           <p class="contact">ایمیل: hafizahmadshirzad@gmail.com</p>
         </div>
+
         <!-- social -->
         <div class="footer-section">
           <h3>موږ تعقیب کړئ</h3>
@@ -287,20 +303,13 @@
           </div>
         </div>
       </div>
-      <!-- Bottom -->
 
+      <!-- Bottom -->
       <div class="footer-bottom">
         <p>© 2026 Atlantic Oil | ټول حقوق خوندي دي.</p>
       </div>
     </footer>
 
-    <script>
-      const toggle = document.getElementById("menu-toggle");
-      const nav = document.getElementById("nav-links");
-
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
