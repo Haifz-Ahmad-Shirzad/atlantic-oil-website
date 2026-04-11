@@ -438,8 +438,23 @@
 
   .demo-info,
   .demo-video {
-    width: 100%;
+    width: 90%;
     height: 280;
+    margin: 1em;
+  }
+  .demo-info h3 {
+    font-weight: 600;
+    font-size: 1.2em;
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+  }
+
+  .demo-info p {
+    color: #222;
+    line-height: 1.6;
+    font-size: 0.9em;
+    margin-bottom: 20px;
   }
 }
 
