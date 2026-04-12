@@ -707,13 +707,12 @@ section {
   margin-bottom: 15px;
 }
 
-/* .faq {
-  padding: 10px;
-} */
+/* //// */
 
 /* FAQ section */
 
-/* standar and modern FAQ design like + sign clicked the answer is shown*/
+/* FAQ section */
+
 .faq {
   padding: 60px 8%;
   background: var(--light-gray);
@@ -730,112 +729,70 @@ section {
   color: var(--secondary-color);
 }
 
-/* FAQ Item should be like a collapsible card like real world  */
+/* FAQ Item */
 
 .faq-item {
   background: #ffffff;
   margin-bottom: 15px;
-  padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: 0.3s;
 }
 
 .faq-item:hover {
   background: #fcf9f9;
-  margin-bottom: 15px;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
   transform: scale(1.01);
 }
 
-.faq-item h3 {
-  margin-bottom: 10px;
-  color: var(--primary-color);
-}
-
-.faq-item p {
-  color: #444;
-}
-
-/* /////////////////// */
-.item input {
-  display: none;
-}
-.item label {
-  display: block;
-  font-weight: bold;
-  cursor: pointer;
-  color: var(--primary-color);
-}
-.item p {
-  max-height: 0;
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.item input:checked ~ p {
-  max-height: 100px;
-  margin-top: 10px;
-}
-
-/* FAQ section */
+/* hide checkbox */
 .faq-item input {
   display: none;
 }
 
+/* question (label) */
 .faq-item label {
   display: block;
   padding: 15px;
-  background: #fff;
-  margin-bottom: 5px;
+  background: var(--bg-color);
   cursor: pointer;
   font-weight: bold;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  color: var(--secondary-color);
   position: relative;
 }
 
-/* hide answer by default */
+/* + icon */
+.faq-item label::after {
+  content: "+";
+  position: absolute;
+  right: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/* - icon when open */
+.faq-item input:checked + label::after {
+  content: "-";
+}
+
+/* ANSWER (p) */
 .faq-item p {
   max-height: 0;
   overflow: hidden;
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 0 15px;
-  transition: 0.3s ease;
-  border-radius: 0 0 8px 8px;
+  color: #444;
+  transition:
+    max-height 0.35s ease,
+    padding 0.35s ease;
 }
 
-/* when checked → show answer */
+/* SHOW ANSWER */
 .faq-item input:checked ~ p {
   max-height: 200px;
   padding: 15px;
 }
 
-.faq-item p {
-  max-height: 0;
-  overflow: hidden;
-  transition:
-    max-height 0.35s ease,
-    padding 0.35s ease;
-  background: #f9f9f9;
-  border-radius: 0 0 8px 8px;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  background: #f9f9f9;
-  padding: 0 15px;
-  transition: 0.35s ease;
-  border-radius: 0 0 8px 8px;
-}
-
-/* ONLY ONE OPEN */
-.faq-item input:checked ~ .faq-answer {
-  max-height: 200px;
-  padding: 15px;
-}
 /*  test monial*/
 /* Testimonials Section */
 .testimonials {
