@@ -15,7 +15,11 @@
       .contact-hero {
         text-align: center;
         padding: 50px 20px;
-        background: linear-gradient(to left, #0f172a, #1f2937);
+        background:
+          linear-gradient(to left, #0f172a, #1f2937),
+          url("./assets/images/Contact-bgwebp.webp");
+        background-size: cover;
+        background-position: center;
         color: white;
       }
 
@@ -47,6 +51,7 @@
         padding: 10px;
         border-radius: 6px;
         border: none;
+        width: 100%;
       }
 
       .contact-form button {
@@ -78,6 +83,7 @@
       /* MAP */
       .map {
         margin-top: 30px;
+        height: 600px;
       }
 
       /* MOBILE */
@@ -161,6 +167,6 @@
 
     <div id="footer"></div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

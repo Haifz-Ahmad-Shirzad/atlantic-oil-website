@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Login</title>
+
     <link rel="stylesheet" href="style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -12,41 +16,65 @@
   </head>
 
   <body dir="rtl">
+    <!-- HEADER -->
     <div id="header"></div>
+
+    <!-- LOGIN SECTION -->
     <section class="auth-container">
       <div class="auth-box">
         <h2>ننوتل (Login)</h2>
 
-        <form class="auth-form">
+        <!-- FORM -->
+        <form class="auth-form" id="loginForm">
+          <!-- EMAIL -->
           <div class="form-group">
-            <label>ایمیل</label>
-            <input type="email" placeholder="example@gmail.com" required />
+            <label for="loginEmail">ایمیل</label>
+
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="example@gmail.com"
+            />
           </div>
 
+          <!-- PASSWORD -->
           <div class="form-group">
-            <label>پاسورډ</label>
-            <input type="password" placeholder="********" required />
+            <label for="loginPassword">پاسورډ</label>
+
+            <input type="password" id="loginPassword" placeholder="********" />
           </div>
 
+          <!-- OPTIONS -->
           <div class="form-options">
             <label>
-              <input type="checkbox" />
+              <input type="checkbox" id="rememberMe" />
               ما په یاد وساته
             </label>
+
             <a href="#">پاسورډ هېر کړی؟</a>
           </div>
 
+          <!-- ERROR MESSAGE -->
+          <p id="loginError" class="error"></p>
+
+          <!-- BUTTON -->
           <button type="submit" class="auth-btn">ننوتل</button>
 
+          <!-- SWITCH -->
           <p class="switch-auth">
             حساب نه لرې؟
+
             <a href="signup.html">ثبت نام</a>
           </p>
         </form>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <div id="footer"></div>
-    <script src="script.js"></script>
+
+    <!-- JAVASCRIPT -->
+    <script type="module" src="script.js"></script>
+    <script type="module" src="login.js"></script>
   </body>
 </html>

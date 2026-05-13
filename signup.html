@@ -2,9 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Signup</title>
+
     <link rel="stylesheet" href="./style.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -12,61 +16,67 @@
   </head>
 
   <body dir="ltr">
+    <!-- HEADER -->
     <div id="header"></div>
+
+    <!-- SIGNUP SECTION -->
     <section class="auth-container">
       <div class="auth-box">
         <h2>ثبت نام (Sign Up)</h2>
 
         <form class="auth-form" id="signupForm">
+          <!-- NAME -->
           <div class="form-group">
-            <label>نوم</label>
-            <input type="text" id="name" placeholder="ستاسو نوم" required />
+            <label for="name">نوم</label>
+
+            <input type="text" id="name" placeholder="ستاسو نوم" />
           </div>
 
+          <!-- EMAIL -->
           <div class="form-group">
-            <label>ایمیل</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="example@gmail.com"
-              required
-            />
+            <label for="email">ایمیل</label>
+
+            <input type="email" id="email" placeholder="example@gmail.com" />
           </div>
 
+          <!-- PASSWORD -->
           <div class="form-group">
-            <label>پاسورډ</label>
-            <input
-              type="password"
-              id="password"
-              placeholder="********"
-              required
-            />
+            <label for="password">پاسورډ</label>
+
+            <input type="password" id="password" placeholder="********" />
           </div>
 
+          <!-- CONFIRM PASSWORD -->
           <div class="form-group">
-            <label>تایید پاسورډ</label>
+            <label for="confirmPassword"> تایید پاسورډ </label>
+
             <input
               type="password"
               id="confirmPassword"
               placeholder="********"
-              required
             />
           </div>
 
-          <!-- error message -->
+          <!-- ERROR -->
           <p id="errorMsg" class="error"></p>
 
+          <!-- BUTTON -->
           <button type="submit" class="auth-btn">ثبت نام</button>
 
+          <!-- SWITCH -->
           <p class="switch-auth">
             مخکې حساب لرې؟
+
             <a href="login.html">ننوتل</a>
           </p>
         </form>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <div id="footer"></div>
+
+    <!-- JS -->
     <script src="./signup.js"></script>
     <script src="script.js"></script>
   </body>
