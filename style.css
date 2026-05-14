@@ -207,6 +207,9 @@ body.dark {
   background: linear-gradient(135deg, var(--primary-color), var(--dark-gray));
   padding: 60px 20px;
   color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-container {
@@ -222,6 +225,10 @@ body.dark {
 .hero-text {
   flex: 1;
   min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-text h1 {
