@@ -1,0 +1,33 @@
+[
+  {
+    "category": "Max Power",
+    "name": "Max Power 7L",
+    "type": "Engine Oil",
+    "price": 1050,
+    "image": "./assets/images/white5.png"
+  },
+
+  {
+    "category": "Max Power",
+    "name": "Max Power 5L",
+    "type": "Engine Oil",
+    "price": 750,
+    "image": "./assets/images/white5.png"
+  },
+
+  {
+    "category": "X Series",
+    "name": "X 7L",
+    "type": "Engine Oil",
+    "price": 1050,
+    "image": "./assets/images/white5.png"
+  },
+
+  {
+    "category": "Brake Oil",
+    "name": "Brake Oil 250ML",
+    "type": "Brake Fluid",
+    "price": 100,
+    "image": "./assets/images/white5.png"
+  }
+]

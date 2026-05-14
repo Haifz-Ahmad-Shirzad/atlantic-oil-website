@@ -133,39 +133,40 @@ const faqs = [
 // ================================
 // PRODUCTS DATA
 // ================================
-const products = [
-  {
-    category: "Max Power",
-    name: "Max Power 7L",
-    type: "Engine Oil",
-    price: 1050,
-    image: "./assets/images/white5.png",
-  },
+let products = [];
+// const products = [
+//   {
+//     category: "Max Power",
+//     name: "Max Power 7L",
+//     type: "Engine Oil",
+//     price: 1050,
+//     image: "./assets/images/white5.png",
+//   },
 
-  {
-    category: "Max Power",
-    name: "Max Power 5L",
-    type: "Engine Oil",
-    price: 750,
-    image: "./assets/images/white5.png",
-  },
+//   {
+//     category: "Max Power",
+//     name: "Max Power 5L",
+//     type: "Engine Oil",
+//     price: 750,
+//     image: "./assets/images/white5.png",
+//   },
 
-  {
-    category: "X Series",
-    name: "X 7L",
-    type: "Engine Oil",
-    price: 1050,
-    image: "./assets/images/white5.png",
-  },
+//   {
+//     category: "X Series",
+//     name: "X 7L",
+//     type: "Engine Oil",
+//     price: 1050,
+//     image: "./assets/images/white5.png",
+//   },
 
-  {
-    category: "Brake Oil",
-    name: "Brake Oil 250ML",
-    type: "Brake Fluid",
-    price: 100,
-    image: "./assets/images/white5.png",
-  },
-];
+//   {
+//     category: "Brake Oil",
+//     name: "Brake Oil 250ML",
+//     type: "Brake Fluid",
+//     price: 100,
+//     image: "./assets/images/white5.png",
+//   },
+// ];
 
 // ================================
 // RENDER SYSTEM FEATURES
@@ -260,7 +261,7 @@ async function loadTestimonials() {
   if (!container) return;
 
   try {
-    const response = await fetch("./data/testimonials.json");
+    const response = await fetch("./api/testimonials.json");
 
     if (!response.ok) {
       throw new Error("Failed to load testimonials");
@@ -335,24 +336,20 @@ function createProductCard(product, container) {
   const card = document.createElement("div");
   card.className = "card";
 
-  const image = document.createElement("img");
-  image.src = product.image;
-
-  const title = document.createElement("h3");
-  title.textContent = product.name;
-
-  const type = document.createElement("p");
-  type.textContent = product.type;
-
-  const price = document.createElement("span");
-  price.className = "price";
-  price.textContent = `${product.price} افغانۍ`;
-
-  card.append(image, title, type, price);
+  card.innerHTML = `
+    <img src="${product.image}" alt="${product.name}">
+    
+    <h3>${product.name}</h3>
+    
+    <p>${product.type}</p>
+    
+    <span class="price">
+      ${product.price} افغانۍ
+    </span>
+  `;
 
   container.append(card);
 }
-
 // ================================
 // GET PRODUCT CONTAINER
 // ================================
@@ -363,62 +360,59 @@ function getProductContainer() {
 // ================================
 // RENDER ALL PRODUCTS
 // ================================
-function renderAllProducts() {
+function renderProducts(productsToRender) {
   const container = getProductContainer();
 
   if (!container) return;
 
-  container.textContent = "";
+  container.innerHTML = "";
 
-  for (const product of products) {
+  for (const product of productsToRender) {
     createProductCard(product, container);
   }
 }
 
+async function loadProducts() {
+  try {
+    const response = await fetch("./api/products.json");
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch products");
+    }
+
+    products = await response.json();
+
+    renderProducts(products);
+  } catch (error) {
+    console.error("API Error:", error);
+  }
+}
 // ================================
 // FILTER PRODUCTS
 // ================================
 function filterByCategory(category) {
-  const container = getProductContainer();
-
-  if (!container) return;
-
-  container.textContent = "";
-
-  let filteredProducts = [];
-
   if (category === "all") {
-    filteredProducts = products;
-  } else {
-    filteredProducts = products.filter(
-      (product) => product.category === category,
-    );
+    renderProducts(products);
+    return;
   }
 
-  for (const product of filteredProducts) {
-    createProductCard(product, container);
-  }
+  const filteredProducts = products.filter(
+    (product) => product.category === category,
+  );
+
+  renderProducts(filteredProducts);
 }
-
 // ================================
 // SEARCH PRODUCTS
 // ================================
 function searchProducts(value) {
-  const container = getProductContainer();
-
-  if (!container) return;
-
-  container.textContent = "";
-
   const searchValue = value.toLowerCase();
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchValue),
   );
 
-  for (const product of filteredProducts) {
-    createProductCard(product, container);
-  }
+  renderProducts(filteredProducts);
 }
 
 // ================================
@@ -477,6 +471,7 @@ window.addEventListener("DOMContentLoaded", () => {
   renderFeatures();
   loadTestimonials();
   renderFAQ();
-  renderAllProducts();
+  // renderAllProducts();
   loadAPIProducts();
+  loadProducts();
 });
