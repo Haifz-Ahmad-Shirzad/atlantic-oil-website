@@ -223,36 +223,6 @@ function renderFeatures() {
 }
 
 // ================================
-// RENDER TESTIMONIALS
-// ================================
-// function renderTestimonials() {
-//   const container = document.getElementById("testimonialContainer");
-
-//   if (!container) return;
-
-//   for (const person of testimonials) {
-//     const card = document.createElement("div");
-//     card.className = "testimonial-card";
-
-//     const image = document.createElement("img");
-//     image.src = person.img;
-//     image.className = "avatar";
-
-//     const text = document.createElement("p");
-//     text.textContent = person.text;
-
-//     const name = document.createElement("h4");
-//     name.textContent = person.name;
-
-//     const role = document.createElement("span");
-//     role.textContent = person.role;
-
-//     card.append(image, text, name, role);
-
-//     container.append(card);
-//   }
-// }
-// ================================
 // LOAD TESTIMONIALS FROM API
 // ================================
 async function loadTestimonials() {
