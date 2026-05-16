@@ -176,6 +176,7 @@ body.dark {
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--transition);
+    margin-bottom: 10px;
   }
 
   .nav-links a {
@@ -199,6 +200,19 @@ body.dark {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .mobile-auth #login,
+  #signup {
+    width: 40%;
+    background: gold;
+    color: #0b1220;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 8px;
+    transition: var(--transition);
   }
 }
 
